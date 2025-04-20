@@ -1,4 +1,4 @@
-{
+export default {
     "nav": {
         "features": "Функции",
         "about": "О нас",

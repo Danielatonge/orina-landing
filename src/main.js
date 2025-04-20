@@ -3,8 +3,8 @@ import './assets/base.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createI18n } from 'vue-i18n'
-import en from './i18n/en.json'
-import ru from './i18n/ru.json'
+import en from './i18n/en.js'
+import ru from './i18n/ru.js'
 const app = createApp(App)
 
 // Create VueI18n instance with options

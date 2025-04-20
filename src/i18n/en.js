@@ -1,4 +1,4 @@
-{
+export default {
     "nav": {
         "features": "Features",
         "about": "About",
