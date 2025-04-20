@@ -1,11 +1,17 @@
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import LanguageSwitcher from './components/LanguageSwitcher.vue'
+import heroImage from './assets/hero-image.png'
 
 const isMobileMenuOpen = ref(false)
 
+const { t } = useI18n()
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
+
+const currentYear = ref(new Date().getFullYear())
 </script>
 
 <template>
@@ -23,20 +29,24 @@ const toggleMobileMenu = () => {
 
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center space-x-8">
-            <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Features</a>
-            <a href="#journey" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">About</a>
-            <a href="#waitlist" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Pricing</a>
-            <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Contact</a>
+            <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">{{
+              t('nav.features') }}</a>
+            <a href="#journey" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">{{
+              t('nav.about') }}</a>
+            <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">{{
+              t('nav.pricing') }}</a>
+            <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">{{
+              t('nav.contact') }}</a>
+
+
           </div>
 
           <!-- CTA Buttons -->
           <div class="hidden md:flex items-center space-x-4">
-            <button class="text-gray-700 hover:text-red-500 font-semibold transition-colors duration-200">
-              Sign In
-            </button>
-            <a href="#waitlist"
+            <LanguageSwitcher />
+            <a href="http://app.orina.beauty"
               class="bg-red-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-600 transition-colors duration-200">
-              Join Waitlist
+              {{ t('nav.getStarted') }}
             </a>
           </div>
 
@@ -51,21 +61,18 @@ const toggleMobileMenu = () => {
         <!-- Mobile Menu (Hidden by default) -->
         <div class="md:hidden" :class="{ 'hidden': !isMobileMenuOpen }">
           <div class="py-4 space-y-4">
-            <a href="#features"
-              class="block text-gray-600 hover:text-gray-900 transition-colors duration-200">Features</a>
-            <a href="#about" class="block text-gray-600 hover:text-gray-900 transition-colors duration-200">About</a>
-            <a href="#pricing"
-              class="block text-gray-600 hover:text-gray-900 transition-colors duration-200">Pricing</a>
-            <a href="#contact"
-              class="block text-gray-600 hover:text-gray-900 transition-colors duration-200">Contact</a>
+            <a href="#features" class="block text-gray-600 hover:text-gray-900 transition-colors duration-200">{{
+              t('nav.features') }}</a>
+            <a href="#about" class="block text-gray-600 hover:text-gray-900 transition-colors duration-200">{{
+              t('nav.about') }}</a>
+            <a href="#pricing" class="block text-gray-600 hover:text-gray-900 transition-colors duration-200">{{
+              t('nav.pricing') }}</a>
+            <a href="#contact" class="block text-gray-600 hover:text-gray-900 transition-colors duration-200">{{
+              t('nav.contact') }}</a>
             <div class="pt-4 space-y-4">
-              <button
-                class="block w-full text-left text-gray-700 hover:text-red-500 font-semibold transition-colors duration-200">
-                Sign In
-              </button>
-              <a href="#waitlist"
-                class="block w-full bg-red-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-600 transition-colors duration-200">
-                Join Waitlist
+              <a href="http://app.orina.beauty"
+                class="block w-full bg-red-500 text-center text-white px-4 py-2 rounded-full font-semibold hover:bg-red-600 transition-colors duration-200">
+                {{ t('nav.getStarted') }}
               </a>
             </div>
           </div>
@@ -81,23 +88,18 @@ const toggleMobileMenu = () => {
           <!-- Content -->
           <div class="text-center md:text-left relative z-10">
             <p class="text-4xl mb-6 font-semibold text-gray-800">
-              Your Salon, Just a Tap Away.
+              {{ t('hero.title') }}
             </p>
             <p class="text-lg mb-8 text-gray-600">
-              A smarter, simpler way to book salon appointments and manage beauty businesses.
-              Whether you're getting styled or managing the salon—Orina connects you in seconds.
+              {{ t('hero.subtitle') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <a href="#waitlist"
+              <a href="http://app.orina.beauty"
                 class="bg-red-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors duration-300">
-                Join the Waitlist
-              </a>
-              <a href="#waitlist"
-                class="bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 border-2 border-gray-200 transition-colors duration-300">
-                Book a Demo
+                {{ t('nav.getStarted') }}
               </a>
             </div>
-            <p class="mt-4 text-sm text-gray-500">✨ Join 500+ salons already waiting to transform their business</p>
+            <p class="mt-4 text-sm text-gray-500">{{ t('hero.joinOthers') }}</p>
           </div>
 
           <!-- Image -->
@@ -106,6 +108,7 @@ const toggleMobileMenu = () => {
               <!-- Placeholder styling -->
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="relative w-4/5 h-4/5">
+                  <img :src="heroImage" alt="Orina Hero" class="w-full h-full object-cover absolute -bottom-16">
                   <!-- Abstract shape decorations -->
                   <div
                     class="absolute top-0 right-0 w-24 h-24 bg-red-200 rounded-full opacity-50 transform translate-x-1/2 -translate-y-1/2">
@@ -116,7 +119,6 @@ const toggleMobileMenu = () => {
 
                   <!-- Image placeholder with icon -->
                   <div class="absolute inset-0 flex items-center justify-center">
-                    <span class="text-8xl">💇‍♀️</span>
                   </div>
                 </div>
               </div>
@@ -124,10 +126,10 @@ const toggleMobileMenu = () => {
 
             <!-- Floating elements -->
             <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg transform rotate-3">
-              <p class="text-sm font-semibold">⭐️ 4.9/5 Rating</p>
+              <p class="text-sm font-semibold">{{ t('hero.rating') }}</p>
             </div>
             <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg transform -rotate-3">
-              <p class="text-sm font-semibold">🚀 Book in 30 seconds</p>
+              <p class="text-sm font-semibold">{{ t('hero.bookInSeconds') }}</p>
             </div>
           </div>
         </div>
@@ -145,9 +147,8 @@ const toggleMobileMenu = () => {
       <section id="features" class="px-6 py-24 bg-gradient-to-b from-white to-gray-50">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Experience the Difference</h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Discover how Orina transforms your salon experience with
-              powerful features for both customers and beauty salons.</p>
+            <h2 class="text-4xl font-bold mb-4">{{ t('features.title') }}</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">{{ t('features.subtitle') }}</p>
           </div>
 
           <div class="grid md:grid-cols-2 gap-16">
@@ -155,48 +156,42 @@ const toggleMobileMenu = () => {
             <div class="bg-white rounded-2xl p-8 shadow-lg transform hover:scale-110 transition-transform duration-300">
               <div class="flex items-center justify-center mb-6">
                 <span class="text-3xl mr-4">💇‍♀️</span>
-                <h3 class="text-2xl font-bold text-gray-800">For Customers</h3>
+                <h3 class="text-2xl font-bold text-gray-800">{{ t('features.forCustomers.title') }}</h3>
               </div>
               <div class="space-y-6">
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">✨</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Find Your Perfect Salon</h4>
-                    <p class="text-gray-600">Browse top-rated salons near you, read reviews, and explore their signature
-                      styles.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forCustomers.find.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forCustomers.find.desc') }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">⚡️</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Lightning-Fast Booking</h4>
-                    <p class="text-gray-600">Book your favorite stylist in seconds, with real-time availability and
-                      instant confirmation.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forCustomers.book.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forCustomers.book.desc') }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">🎯</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Never Miss an Appointment</h4>
-                    <p class="text-gray-600">Smart reminders, calendar sync, and instant updates keep you perfectly on
-                      schedule.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forCustomers.notify.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forCustomers.notify.desc') }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">💫</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Inspiration Gallery</h4>
-                    <p class="text-gray-600">Create your style wishlist and share inspiration directly with your
-                      stylist.
-                    </p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forCustomers.gallery.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forCustomers.gallery.desc') }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">💎</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Effortless Payments</h4>
-                    <p class="text-gray-600">Skip the checkout line with secure digital payments and split-payment
-                      options.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forCustomers.payments.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forCustomers.payments.desc') }}</p>
                   </div>
                 </div>
               </div>
@@ -206,45 +201,42 @@ const toggleMobileMenu = () => {
             <div class="bg-white rounded-2xl p-8 shadow-lg transform hover:scale-110 transition-transform duration-300">
               <div class="flex items-center justify-center mb-6">
                 <span class="text-3xl mr-4">🚀</span>
-                <h3 class="text-2xl font-bold text-gray-800">For Salons</h3>
+                <h3 class="text-2xl font-bold text-gray-800">{{ t('features.forSalons.title') }}</h3>
               </div>
               <div class="space-y-6">
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">💼</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Smart Business Management</h4>
-                    <p class="text-gray-600">Manage appointments, staff schedules, and client relationships from one
-                      powerful dashboard.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forSalons.management.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forSalons.management.desc') }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">📊</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Analytics & Insights</h4>
-                    <p class="text-gray-600">Track revenue, popular services, and customer satisfaction with real-time
-                      analytics.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forSalons.analytics.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forSalons.analytics.desc') }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">🔔</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Automated Notifications</h4>
-                    <p class="text-gray-600">Reduce no-shows with automated reminders and booking confirmations.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forSalons.notifications.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forSalons.notifications.desc') }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">💰</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Payment Processing</h4>
-                    <p class="text-gray-600">Accept deposits, process payments, and manage refunds with ease.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forSalons.payments.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forSalons.payments.desc') }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-2xl mr-4 text-red-500">🎯</span>
                   <div>
-                    <h4 class="font-semibold mb-1">Marketing Tools</h4>
-                    <p class="text-gray-600">Grow your business with integrated marketing tools and customer loyalty
-                      programs.</p>
+                    <h4 class="font-semibold mb-1">{{ t('features.forSalons.marketing.title') }}</h4>
+                    <p class="text-gray-600">{{ t('features.forSalons.marketing.desc') }}</p>
                   </div>
                 </div>
               </div>
@@ -255,65 +247,180 @@ const toggleMobileMenu = () => {
 
       <!-- Journey -->
       <section id="journey" class="px-6 py-20 max-w-4xl mx-auto">
-        <h2 class="text-2xl text-center font-bold mb-6">✨ Your Beauty Journey Starts Here</h2>
+        <h2 class="text-2xl text-center font-bold mb-6">{{ t('journey.title') }}</h2>
         <ol class="list-decimal list-inside space-y-6">
           <li>
-            <strong>Discover</strong> —
-            <span class="text-gray-600">Find your perfect match from our curated network of top-rated salons and expert
-              stylists who align with your unique style and preferences.</span>
+            <strong>{{ t('journey.step1.title') }}</strong> —
+            <span class="text-gray-600">{{ t('journey.step1.desc') }}</span>
           </li>
           <li>
-            <strong>Book</strong> —
-            <span class="text-gray-600">Schedule your appointment in seconds with our intuitive booking system. Pick
-              your
-              time, service, and stylist—all with just a few taps.</span>
+            <strong>{{ t('journey.step2.title') }}</strong> —
+            <span class="text-gray-600">{{ t('journey.step2.desc') }}</span>
           </li>
           <li>
-            <strong>Experience</strong> —
-            <span class="text-gray-600">Enjoy a seamless salon visit with digital check-in, style sharing, and
-              contactless
-              payments. Your perfect look awaits!</span>
+            <strong>{{ t('journey.step3.title') }}</strong> —
+            <span class="text-gray-600">{{ t('journey.step3.desc') }}</span>
           </li>
           <li>
-            <strong>Share & Grow</strong> —
-            <span class="text-gray-600">Join our beauty community. Share your experience, earn rewards, and discover new
-              styles and trends from fellow beauty enthusiasts.</span>
+            <strong>{{ t('journey.step4.title') }}</strong> —
+            <span class="text-gray-600">{{ t('journey.step4.desc') }}</span>
           </li>
         </ol>
       </section>
 
-      <!-- Waitlist -->
-      <section id="waitlist" class="px-6 py-24 bg-red-500">
-        <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-4 text-white">📲 Ready to Try Orina?</h2>
-          <p class="text-white text-lg mb-8 opacity-90">
-            Be among the first to experience the future of salon booking. Get early access and exclusive updates.
-          </p>
+      <!-- Pricing -->
+      <section id="pricing" class="px-6 py-24 bg-white">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">{{ t('pricing.title') }}</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">{{ t('pricing.subtitle') }}</p>
+          </div>
 
-          <form class="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <div class="w-full md:w-2/3">
-              <input type="email" placeholder="Enter your email address"
-                class="w-full px-6 py-3 rounded-full border-2 border-transparent bg-white/90 placeholder-gray-500 focus:outline-none focus:border-white focus:ring-2 focus:ring-white/30"
-                required />
+          <div class="flex flex-col md:flex-row gap-8">
+            <!-- Basic Plan -->
+            <div
+              class=" bg-white rounded-2xl p-8 shadow-lg transform hover:scale-105 transition-transform duration-300 min-w-full md:min-w-[406px]">
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ t('pricing.basic.title') }}</h3>
+                <div class="flex items-center justify-center">
+                  <span class="text-4xl font-bold text-gray-800">{{ t('pricing.basic.price') }}₽</span>
+                  <span class="text-gray-500 ml-2">/{{ t('pricing.period') }}</span>
+                </div>
+              </div>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.basic.features.1') }}</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.basic.features.2') }}</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.basic.features.3') }}</span>
+                </li>
+              </ul>
+              <a href="http://app.orina.beauty"
+                class="block w-full text-center bg-gray-100 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-200">
+                {{ t('pricing.basic.cta') }}
+              </a>
             </div>
-            <button type="submit"
-              class="w-full md:w-auto bg-gray-50 text-gray-500 hover:text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-500 transition-colors duration-400 border-2 border-transparent hover:border-white">
-              Get Early Access
-            </button>
-          </form>
 
-          <div class="mt-6 text-sm text-white/80">
-            <p>🔒 We respect your privacy and will never share your information.</p>
-            <p class="mt-2">✨ Join 500+ others excited about Orina</p>
+            <!-- Pro Plan -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-lg transform hover:scale-105 transition-transform duration-300 relative min-w-full md:min-w-[406px]">
+              <div class="absolute top-0 right-0 bg-red-500 text-white px-4 py-1 rounded-bl-xl rounded-tr-xl">
+                {{ t('pricing.pro.popular') }}
+              </div>
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ t('pricing.pro.title') }}</h3>
+                <div class="flex items-center justify-center">
+                  <span class="text-4xl font-bold text-gray-800">{{ t('pricing.pro.price') }}₽</span>
+                  <span class="text-gray-500 ml-2">/{{ t('pricing.period') }}</span>
+                </div>
+              </div>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.pro.features.1') }}</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.pro.features.2') }}</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.pro.features.3') }}</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.pro.features.4') }}</span>
+                </li>
+              </ul>
+              <a href="http://app.orina.beauty"
+                class="block w-full text-center bg-red-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors duration-200">
+                {{ t('pricing.pro.cta') }}
+              </a>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-lg transform hover:scale-105 transition-transform duration-300 min-w-full md:min-w-[406px]">
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ t('pricing.enterprise.title') }}</h3>
+                <div class="flex items-center justify-center">
+                  <span class="text-4xl font-bold text-gray-800">{{ t('pricing.enterprise.price') }}</span>
+                </div>
+              </div>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.enterprise.features.1') }}</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.enterprise.features.2') }}</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.enterprise.features.3') }}</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>{{ t('pricing.enterprise.features.4') }}</span>
+                </li>
+              </ul>
+              <a href="http://app.orina.beauty"
+                class="block w-full text-center bg-gray-100 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-200">
+                {{ t('pricing.enterprise.cta') }}
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Final Note -->
-      <section class="bg-gray-50 px-6 py-16 text-center">
-        <h2 class="text-2xl font-bold mb-4">🧡 Inspired by the best, built for you.</h2>
-        <p class="mb-4">"Think Fresha, but reimagined for flexibility and speed."</p>
-        <p class="text-gray-700">Explore the new standard in salon scheduling.</p>
+      <!-- Contact -->
+      <section id="contact" class="px-6 py-24 bg-red-500">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4 text-white">{{ t('contact.title') }}</h2>
+          <p class="text-white text-lg mb-8 opacity-90">
+            {{ t('contact.subtitle') }}
+          </p>
+
+          <div class="flex flex-col gap-6">
+            <div class="grid md:grid-cols-2 gap-4">
+              <a href="mailto:sales@orina.beauty"
+                class="bg-white/90 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-200">
+                {{ t('contact.sales') }}
+              </a>
+              <a href="mailto:support@orina.beauty"
+                class="bg-white/90 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-200">
+                {{ t('contact.support') }}
+              </a>
+            </div>
+            <a href="mailto:partnership@orina.beauty"
+              class="bg-white/90 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-200">
+              {{ t('contact.partnership') }}
+            </a>
+          </div>
+
+          <div class="mt-6 text-sm text-white/80">
+            <p>{{ t('contact.privacy') }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sponsored Note -->
+      <section class="bg-gray-50 px-6 py-16 text-center flex flex-col md:flex-row gap-4 justify-center">
+        <div class="flex justify-center">
+          <a class="flex gap-4" href="https://fasie.ru/">
+            <img src="./assets/fasie-logo.svg" alt="mail" class="object-contain h-24">
+          </a>
+        </div>
+        <div class="flex justify-center">
+          <p class="mb-4 max-w-4xl text-center md:text-right ">{{ t('sponsored.title') }}</p>
+        </div>
       </section>
 
       <!-- Footer -->
@@ -326,20 +433,22 @@ const toggleMobileMenu = () => {
                 <span class="text-red-500">O</span>rina<span class="text-red-500">.</span>
               </h1>
               <p class="text-gray-400 max-w-md">
-                Transforming the beauty industry with seamless scheduling and business management solutions.
+                {{ t('footer.description') }}
               </p>
+
             </div>
 
             <!-- Contact Details -->
             <div class="md:text-right space-y-4" id="contact">
               <div>
-                <h3 class="text-white font-semibold mb-2">Contact Us</h3>
-                <a href="mailto:hello@orina.co" class="text-gray-400 hover:text-white transition-colors duration-200">
-                  hello@orina.co
+                <h3 class="text-white font-semibold mb-2">{{ t('footer.contact') }}</h3>
+                <a href="mailto:hello@orina.beauty"
+                  class="text-gray-400 hover:text-white transition-colors duration-200">
+                  hello@orina.beauty
                 </a>
               </div>
               <div>
-                <h3 class="text-white font-semibold mb-2">Follow Us</h3>
+                <h3 class="text-white font-semibold mb-2">{{ t('footer.follow') }}</h3>
                 <div class="flex md:justify-end gap-4">
                   <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
                     Twitter
@@ -356,12 +465,12 @@ const toggleMobileMenu = () => {
           </div>
 
           <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-sm text-gray-400">&copy; 2025 Orina. All rights reserved.</p>
+            <p class="text-sm text-gray-400"> &copy; {{ currentYear }} {{ t('footer.rights') }}</p>
             <div class="flex gap-4 mt-4 md:mt-0">
-              <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">Privacy
-                Policy</a>
-              <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">Terms of
-                Service</a>
+              <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">{{
+                t('footer.privacy') }}</a>
+              <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors duration-200">{{
+                t('footer.terms') }}</a>
             </div>
           </div>
         </div>
