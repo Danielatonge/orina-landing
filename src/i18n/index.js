@@ -315,5 +315,8 @@ export const i18n = createI18n({
     silentTranslationWarn: true, // disable warnings for missing translations
     missingWarn: false, // disable warnings for missing translations
     fallbackWarn: false, // disable warnings for fallback translations
-    silentFallbackWarn: true // disable warnings for fallback translations
+    silentFallbackWarn: true, // disable warnings for fallback translations
+    allowComposition: true, // enable composition API
+    sync: true, // enable sync mode
+    warnHtmlMessage: false // disable HTML message warning
 }) 

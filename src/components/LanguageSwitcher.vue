@@ -1,8 +1,8 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const selectedLocale = ref(locale.value)
 
 const languages = [
@@ -13,17 +13,27 @@ const languages = [
 // Load saved locale from localStorage
 onMounted(() => {
     const savedLocale = localStorage.getItem('locale')
-    if (savedLocale) {
+    if (savedLocale && languages.some(lang => lang.code === savedLocale)) {
         selectedLocale.value = savedLocale
         locale.value = savedLocale
     }
 })
 
+// Watch for locale changes
+watch(selectedLocale, (newLocale) => {
+    if (newLocale && languages.some(lang => lang.code === newLocale)) {
+        locale.value = newLocale
+        localStorage.setItem('locale', newLocale)
+    }
+})
+
 // Save locale to localStorage when changed
 const updateLocale = (newLocale) => {
-    selectedLocale.value = newLocale
-    locale.value = newLocale
-    localStorage.setItem('locale', newLocale)
+    if (newLocale && languages.some(lang => lang.code === newLocale)) {
+        selectedLocale.value = newLocale
+        locale.value = newLocale
+        localStorage.setItem('locale', newLocale)
+    }
 }
 </script>
 
