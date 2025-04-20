@@ -305,9 +305,15 @@ const messages = {
     }
 }
 
+// Create VueI18n instance with options
 export const i18n = createI18n({
     legacy: false,
-    locale: 'ru',
-    fallbackLocale: 'ru',
-    messages
+    locale: 'ru', // set locale
+    fallbackLocale: 'en', // set fallback locale
+    messages, // set locale messages
+    globalInjection: true, // enable global injection
+    silentTranslationWarn: true, // disable warnings for missing translations
+    missingWarn: false, // disable warnings for missing translations
+    fallbackWarn: false, // disable warnings for fallback translations
+    silentFallbackWarn: true // disable warnings for fallback translations
 }) 
