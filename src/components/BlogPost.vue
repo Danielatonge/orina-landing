@@ -57,9 +57,9 @@ onMounted(() => {
         </header>
 
         <!-- Featured Image -->
-        <div class="aspect-video bg-gray-200 rounded-2xl mb-12">
-            <div class="w-full h-full flex items-center justify-center text-gray-400">
-                [Featured Image]
+        <div class="bg-gray-200 rounded-2xl mb-12">
+            <div class="w-full h-full flex items-center justify-center text-gray-400 ">
+                <img :src="post.image" :alt="post.title" />
             </div>
         </div>
 

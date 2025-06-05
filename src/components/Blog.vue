@@ -56,9 +56,9 @@ const navigateToPost = (slug) => {
                     <article v-for="post in filteredPosts.slice(0, 3)" :key="post.id"
                         class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                         @click="navigateToPost(post.slug)">
-                        <div class="aspect-video bg-gray-200">
+                        <div class="aspect-video bg-gray-200 overflow-hidden">
                             <div class="w-full h-full flex items-center justify-center text-gray-400">
-                                [Image]
+                                <img :src="post.image" alt="" />
                             </div>
                         </div>
                         <div class="p-6">
@@ -66,7 +66,7 @@ const navigateToPost = (slug) => {
                                 {{ t(`blog.categories.${post.category}`) }}
                             </span>
                             <h4 class="text-xl font-bold mt-2 mb-3">{{ post.title }}</h4>
-                            <p class="text-gray-600 mb-4">{{ post.content.sections[0].content }}</p>
+                            <p class="text-gray-600 mb-4 line-clamp-3 ">{{ post.content.overview }}</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-sm text-gray-500">
                                     {{ new Date(post.date).toLocaleDateString() }}

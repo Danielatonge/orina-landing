@@ -1,45 +1,35 @@
+import topbeauty from "../assets/blog/top-beauty-trends.png";
 export const posts = [
     {
         id: 1,
         slug: "top-beauty-trends-2024",
         title: "Top Beauty Trends for 2024",
         content: {
+            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
+            routines to skin-first philosophies, this year's trends are all about embracing individuality,
+             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
             sections: [
                 {
-                    title: "Sustainable Beauty",
-                    icon: "💚",
-                    content: "Consumers are increasingly conscious about the environmental impact of their beauty products. Brands are responding with:",
-                    list: [
-                        "Eco-friendly packaging",
-                        "Clean, natural ingredients",
-                        "Zero-waste initiatives"
-                    ]
+                    title: "AI-Driven Personal Beauty",
+                    icon: "💋",
+                    content: `Artificial Intelligence is taking center stage in skincare and cosmetics. Expect 
+                    personalized product recommendations, virtual makeup try-ons, and AI-enhanced skin analysis that adapt 
+                    to your unique features and daily habits. Try This: Smart beauty apps that scan your skin and suggest 
+                    custom serums or routines.`,
                 },
                 {
-                    title: "Digital Beauty",
-                    icon: "🤖",
-                    content: "Technology is revolutionizing how we approach beauty:",
-                    code: {
-                        language: "javascript",
-                        content: `// Example of AI-powered beauty analysis
-function analyzeSkin(image) {
-    return {
-        hydration: 85,
-        elasticity: 92,
-        recommendations: ['Hydrating serum', 'Collagen boost']
-    }
-}`
-                    }
+                    title: "Skinimalism 2.0",
+                    icon: "🧴",
+                    content: `Less is more—again. But in 2025, skinimalism is enhanced by multi-functional products powered 
+                    by biotech ingredients. People are embracing a cleaner, pared-down routine focused on healthy, glowing skin rather than layers of makeup.
+Try This: A tinted SPF moisturizer with peptides and antioxidants.`,
                 },
                 {
-                    title: "Inclusive Beauty",
-                    icon: "🌈",
-                    content: "The industry is becoming more diverse and inclusive:",
-                    list: [
-                        "Expanded shade ranges",
-                        "Gender-neutral products",
-                        "Representation in marketing"
-                    ]
+                    title: "Blue Beauty & Sustainability",
+                    icon: "♻️",
+                    content: `Eco-conscious beauty is evolving into “blue beauty”—products that not only avoid harming the environment but actively help restore 
+                    it. Brands are cutting down on plastic, using reef-safe formulas, and supporting ocean cleanup efforts.
+Try This: Brands with refillable packaging and biodegradable ingredients.`,
                 }
             ],
             quote: {
@@ -53,12 +43,12 @@ function analyzeSkin(image) {
             ]
         },
         category: "trends",
-        image: "/blog/trends-2024.jpg",
-        date: "2024-03-15",
+        image: topbeauty,
+        date: "2025-03-15",
         author: {
-            name: "Sarah Johnson",
+            name: "Orina Team",
             avatar: "/blog/authors/sarah.jpg",
-            role: "Beauty Industry Expert"
+            role: "Beauty Industry Experts"
         }
     },
     {
@@ -66,6 +56,9 @@ function analyzeSkin(image) {
         slug: "build-successful-salon-business",
         title: "How to Build a Successful Salon Business",
         content: {
+            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
+            routines to skin-first philosophies, this year's trends are all about embracing individuality,
+             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
             sections: [
                 {
                     title: "Business Planning",
@@ -125,6 +118,9 @@ function analyzeSkin(image) {
         slug: "beauty-tips-busy-professionals",
         title: "5 Essential Beauty Tips for Busy Professionals",
         content: {
+            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
+            routines to skin-first philosophies, this year's trends are all about embracing individuality,
+             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
             sections: [
                 {
                     title: "Quick Morning Routine",
@@ -184,6 +180,9 @@ function analyzeSkin(image) {
         slug: "future-of-beauty-tech",
         title: "The Future of Beauty Technology: AI and Beyond",
         content: {
+            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
+            routines to skin-first philosophies, this year's trends are all about embracing individuality,
+             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
             sections: [
                 {
                     title: "AI-Powered Beauty",
@@ -243,6 +242,9 @@ function analyzeSkin(image) {
         slug: "salon-marketing-strategies",
         title: "Effective Marketing Strategies for Modern Salons",
         content: {
+            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
+            routines to skin-first philosophies, this year's trends are all about embracing individuality,
+             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
             sections: [
                 {
                     title: "Digital Presence",
@@ -302,6 +304,9 @@ function analyzeSkin(image) {
         slug: "natural-beauty-routine",
         title: "Creating a Natural Beauty Routine That Works",
         content: {
+            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
+            routines to skin-first philosophies, this year's trends are all about embracing individuality,
+             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
             sections: [
                 {
                     title: "Skin Care Basics",
@@ -361,6 +366,9 @@ function analyzeSkin(image) {
         slug: "sustainable-beauty-brands",
         title: "Top Sustainable Beauty Brands Making a Difference",
         content: {
+            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
+            routines to skin-first philosophies, this year's trends are all about embracing individuality,
+             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
             sections: [
                 {
                     title: "Eco-Friendly Packaging",
