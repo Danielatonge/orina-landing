@@ -115,13 +115,6 @@ const { t } = useI18n()
                                     <p class="text-gray-600">{{ t('features.forCustomers.gallery.desc') }}</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <span class="text-2xl mr-4 text-red-500">💎</span>
-                                <div>
-                                    <h4 class="font-semibold mb-1">{{ t('features.forCustomers.payments.title') }}</h4>
-                                    <p class="text-gray-600">{{ t('features.forCustomers.payments.desc') }}</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -156,13 +149,6 @@ const { t } = useI18n()
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <span class="text-2xl mr-4 text-red-500">💰</span>
-                                <div>
-                                    <h4 class="font-semibold mb-1">{{ t('features.forSalons.payments.title') }}</h4>
-                                    <p class="text-gray-600">{{ t('features.forSalons.payments.desc') }}</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
                                 <span class="text-2xl mr-4 text-red-500">🎯</span>
                                 <div>
                                     <h4 class="font-semibold mb-1">{{ t('features.forSalons.marketing.title') }}</h4>
@@ -176,26 +162,77 @@ const { t } = useI18n()
         </section>
 
         <!-- Journey -->
-        <section id="journey" class="px-6 py-20 max-w-4xl mx-auto">
-            <h2 class="text-2xl text-center font-bold mb-6">{{ t('journey.title') }}</h2>
-            <ol class="list-decimal list-inside space-y-6">
-                <li>
-                    <strong>{{ t('journey.step1.title') }}</strong> —
-                    <span class="text-gray-600">{{ t('journey.step1.desc') }}</span>
-                </li>
-                <li>
-                    <strong>{{ t('journey.step2.title') }}</strong> —
-                    <span class="text-gray-600">{{ t('journey.step2.desc') }}</span>
-                </li>
-                <li>
-                    <strong>{{ t('journey.step3.title') }}</strong> —
-                    <span class="text-gray-600">{{ t('journey.step3.desc') }}</span>
-                </li>
-                <li>
-                    <strong>{{ t('journey.step4.title') }}</strong> —
-                    <span class="text-gray-600">{{ t('journey.step4.desc') }}</span>
-                </li>
-            </ol>
+        <section id="journey" class="px-6 py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl text-center font-bold mb-4">{{ t('journey.title') }}</h2>
+                <p class="text-gray-600 text-center text-lg mb-16 max-w-2xl mx-auto">
+                    {{ t('journey.subtitle') }}
+                </p>
+
+                <!-- Step 1: Find -->
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                    <div class="order-2 md:order-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">🔍</span>
+                            <h3 class="text-2xl font-bold">{{ t('journey.step1.title') }}</h3>
+                        </div>
+                        <p class="text-gray-600 text-lg">{{ t('journey.step1.desc') }}</p>
+                    </div>
+                    <div class="order-1 md:order-2 bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="aspect-square bg-gray-100 rounded-xl flex items-center justify-center">
+                            <img src="../assets/orina-find.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Book -->
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="aspect-square bg-gray-100 rounded-xl flex items-center justify-center">
+                            <img src="../assets/orina-book.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">📅</span>
+                            <h3 class="text-2xl font-bold">{{ t('journey.step2.title') }}</h3>
+                        </div>
+                        <p class="text-gray-600 text-lg">{{ t('journey.step2.desc') }}</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Experience -->
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                    <div class="order-2 md:order-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">✨</span>
+                            <h3 class="text-2xl font-bold">{{ t('journey.step3.title') }}</h3>
+                        </div>
+                        <p class="text-gray-600 text-lg">{{ t('journey.step3.desc') }}</p>
+                    </div>
+                    <div class="order-1 md:order-2 bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="aspect-square bg-gray-100 rounded-xl flex items-center justify-center">
+                            <img src="../assets/orina-experience.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Share -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="aspect-square bg-gray-100 rounded-xl flex items-center justify-center">
+                            <img src="../assets/orina-grow.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-3xl">🌟</span>
+                            <h3 class="text-2xl font-bold">{{ t('journey.step4.title') }}</h3>
+                        </div>
+                        <p class="text-gray-600 text-lg">{{ t('journey.step4.desc') }}</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Pricing -->

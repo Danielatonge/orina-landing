@@ -38,10 +38,6 @@ export default {
                 "title": "Inspiration gallery",
                 "desc": "Create your wishlist and share inspiration directly with your stylist."
             },
-            "payments": {
-                "title": "Easy payments",
-                "desc": "Skip the checkout line with secure digital payments and split payment options."
-            }
         },
         "forSalons": {
             "title": "For Salons",
@@ -56,10 +52,6 @@ export default {
             "notifications": {
                 "title": "Automated notifications",
                 "desc": "Reduce no-shows with automated booking reminders and confirmations."
-            },
-            "payments": {
-                "title": "Payment processing",
-                "desc": "Accept deposits, process payments, and manage refunds with ease."
             },
             "marketing": {
                 "title": "Marketing tools",
