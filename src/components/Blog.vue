@@ -81,46 +81,12 @@ const navigateToPost = (slug) => {
                 </div>
             </div>
 
-            <!-- Latest Posts -->
-            <div>
-                <h3 class="text-2xl font-bold mb-4">{{ t('blog.latest.title') }}</h3>
-                <p class="text-gray-600 mb-8">{{ t('blog.latest.subtitle') }}</p>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <article v-for="post in filteredPosts.slice(3)" :key="post.id"
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                        @click="navigateToPost(post.slug)">
-                        <div class="flex flex-col md:flex-row">
-                            <div class="md:w-1/3 aspect-video md:aspect-auto bg-gray-200">
-                                <div class="w-full h-full flex items-center justify-center text-gray-400">
-                                    [Image]
-                                </div>
-                            </div>
-                            <div class="p-6 md:w-2/3">
-                                <span class="text-sm text-red-500 font-semibold">
-                                    {{ t(`blog.categories.${post.category}`) }}
-                                </span>
-                                <h4 class="text-xl font-bold mt-2 mb-3">{{ post.title }}</h4>
-                                <p class="text-gray-600 mb-4">{{ post.content.sections[0].content }}</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">
-                                        {{ new Date(post.date).toLocaleDateString() }}
-                                    </span>
-                                    <span
-                                        class="text-red-500 font-semibold hover:text-red-600 transition-colors duration-200">
-                                        {{ t('blog.readMore') }} →
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
         </div>
     </section>
 </template>
 
 <style scoped>
 .aspect-video {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 15;
 }
 </style>

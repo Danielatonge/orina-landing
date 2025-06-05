@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { getPostBySlug, getRelatedPosts } from '../data/posts'
@@ -11,18 +11,28 @@ const router = useRouter()
 const post = ref(null)
 const relatedPosts = ref([])
 
-onMounted(() => {
-    const slug = route.params.slug
+const loadPost = (slug) => {
     const foundPost = getPostBySlug(slug)
-
     if (!foundPost) {
-        // Redirect to 404 or blog listing if post not found
         router.push('/blog')
         return
     }
-
     post.value = foundPost
     relatedPosts.value = getRelatedPosts(foundPost)
+}
+
+// Watch for route parameter changes
+watch(
+    () => route.params.slug,
+    (newSlug) => {
+        if (newSlug) {
+            loadPost(newSlug)
+        }
+    }
+)
+
+onMounted(() => {
+    loadPost(route.params.slug)
 })
 </script>
 
@@ -88,15 +98,20 @@ onMounted(() => {
                 "{{ post.content.quote.text }}" - {{ post.content.quote.author }}
             </blockquote>
 
-            <div class="mt-12">
-                <h3 class="text-2xl font-semibold text-red-600 mb-6 flex items-center gap-2">
+            <div class="mt-16 bg-gray-50 rounded-2xl p-8">
+                <h3 class="text-2xl font-semibold text-red-600 mb-8 flex items-center gap-2">
                     <span>🔑</span> Key Takeaways
                 </h3>
-                <ol class="list-decimal list-inside space-y-4">
-                    <li v-for="(takeaway, index) in post.content.takeaways" :key="index" class="text-gray-600">
-                        <strong class="text-gray-800">{{ takeaway.title }}</strong> {{ takeaway.description }}
-                    </li>
-                </ol>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div v-for="(takeaway, index) in post.content.takeaways" :key="index"
+                        class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">{{ ['💡', '✨', '🌟'][index] }}</span>
+                            <h4 class="text-lg font-bold text-gray-800">{{ takeaway.title }}</h4>
+                        </div>
+                        <p class="text-gray-600">{{ takeaway.description }}</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -106,9 +121,9 @@ onMounted(() => {
             <div class="grid md:grid-cols-2 gap-8">
                 <article v-for="relatedPost in relatedPosts" :key="relatedPost.id"
                     class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="aspect-video bg-gray-200">
+                    <div class=" bg-gray-200">
                         <div class="w-full h-full flex items-center justify-center text-gray-400">
-                            [Image]
+                            <img :src="relatedPost.image" :alt="relatedPost.title" />
                         </div>
                     </div>
                     <div class="p-6">

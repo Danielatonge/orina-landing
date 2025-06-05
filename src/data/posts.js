@@ -1,4 +1,10 @@
-import topbeauty from "../assets/blog/top-beauty-trends.png";
+import top_beauty from "../assets/blog/top-beauty-trends.png";
+import salon_business from "../assets/blog/salon-business.png";
+import beauty_tips from "../assets/blog/beauty-tips.png";
+import beauty_tech from "../assets/blog/beauty-tech.png";
+import beauty_brands from "../assets/blog/beauty-brands.png";
+
+
 export const posts = [
     {
         id: 1,
@@ -43,7 +49,7 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
             ]
         },
         category: "trends",
-        image: topbeauty,
+        image: top_beauty,
         date: "2025-03-15",
         author: {
             name: "Orina Team",
@@ -56,30 +62,41 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
         slug: "build-successful-salon-business",
         title: "How to Build a Successful Salon Business",
         content: {
-            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
-            routines to skin-first philosophies, this year's trends are all about embracing individuality,
-             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
+            overview: `Launching and running a successful salon is more than just offering haircuts or nail treatments — it’s about 
+            building a brand, creating an experience, and understanding your clients’ needs. Whether you’re starting from scratch or 
+            looking to grow your current business, this guide will walk you through the key ingredients for long-term salon success.`,
             sections: [
                 {
-                    title: "Business Planning",
-                    icon: "📋",
-                    content: "A solid business plan is the foundation of any successful salon. Here's what you need to consider:",
+                    title: "Start with a Clear Vision",
+                    icon: "🔍",
+                    content: "Before opening your doors, define what kind of salon you want to build:",
                     list: [
-                        "Market research and analysis",
-                        "Financial projections",
-                        "Marketing strategy",
-                        "Staff recruitment plan"
+                        "Will you focus on hair, nails, skincare, or offer all services?",
+                        "Who is your ideal client — busy professionals, students, families, or luxury seekers?",
+                        "What makes your salon unique?",
                     ]
                 },
                 {
-                    title: "Location and Design",
-                    icon: "🏪",
-                    content: "Your salon's location and design can make or break your business:",
+                    title: "Create a Business Plan",
+                    icon: "📋",
+                    content: "A strong business plan sets the foundation for growth. Include:",
                     list: [
-                        "High-traffic areas with good visibility",
-                        "Comfortable and inviting atmosphere",
-                        "Efficient workflow layout",
-                        "Brand-consistent design"
+                        "Market research (competition, customer demand)",
+                        "Service offerings and pricing",
+                        "Marketing and sales strategy",
+                        "Budget and financial projections",
+                        "Staffing and hiring plans"
+                    ]
+                },
+                {
+                    title: "Choose the Right Location",
+                    icon: "🏪",
+                    content: "Your salon’s location can make or break your business. Aim for:",
+                    list: [
+                        "High foot traffic areas (shopping centers, business districts)",
+                        "Easy access with parking or public transportation",
+                        "Visibility from the street",
+                        "Proximity to your target clientele"
                     ]
                 },
                 {
@@ -99,16 +116,17 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
                 author: "Michael Chen, Salon Business Consultant"
             },
             takeaways: [
-                { title: "Planning", description: "is crucial for long-term success" },
-                { title: "Location", description: "can significantly impact your business" },
-                { title: "Team", description: "is your most valuable asset" }
+                { title: "Vision", description: "defines the direction and goals of your salon business" },
+                { title: "Proper Planning", description: "ensures a strong foundation for your business" },
+                { title: "Strategic Location", description: "plays a vital role in attracting and retaining customers" },
+                { title: "Effective Team Management", description: "fosters a positive work environment and drives growth" }
             ]
         },
         category: "business",
-        image: "/blog/salon-business.jpg",
+        image: salon_business,
         date: "2024-03-10",
         author: {
-            name: "Michael Chen",
+            name: "Orina Team",
             avatar: "/blog/authors/michael.jpg",
             role: "Salon Business Consultant"
         }
@@ -118,14 +136,16 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
         slug: "beauty-tips-busy-professionals",
         title: "5 Essential Beauty Tips for Busy Professionals",
         content: {
-            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
-            routines to skin-first philosophies, this year's trends are all about embracing individuality,
-             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
+            overview: `In today’s fast-paced world, maintaining a polished appearance can feel like a challenge. Between back-to-back meetings, 
+            long commutes, and personal responsibilities, it’s easy to let self-care slip down the priority list. But looking and feeling your 
+            best doesn’t have to take hours. Here are five practical, time-saving beauty tips tailored specifically for busy professionals.`,
             sections: [
                 {
                     title: "Quick Morning Routine",
                     icon: "🌅",
-                    content: "Start your day with these efficient beauty steps:",
+                    content: `Streamline your morning with multi-use products. Opt for a tinted moisturizer with SPF, a cream blush that doubles 
+                    as lipstick, and a brow gel to frame your face. Focus on enhancing, not transforming, your natural features. Keep a minimalist 
+                    makeup bag ready for on-the-go touch-ups.`,
                     list: [
                         "Gentle cleanser and toner",
                         "Lightweight moisturizer with SPF",
@@ -136,7 +156,8 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
                 {
                     title: "Office-Ready Makeup",
                     icon: "💄",
-                    content: "Keep your makeup professional and long-lasting:",
+                    content: `A small pouch at your desk can be a lifesaver. Include essentials like dry shampoo, blotting papers, deodorant wipes, 
+                    a compact mirror, and a lip balm. This quick-access kit helps you freshen up before an impromptu Zoom call or after a hectic commute.`,
                     list: [
                         "Long-wear foundation",
                         "Neutral eyeshadow palette",
@@ -147,7 +168,9 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
                 {
                     title: "Evening Recovery",
                     icon: "🌙",
-                    content: "Essential steps to maintain your skin's health:",
+                    content: `Let your skincare work while you sleep. Use overnight masks, serums with retinol or hyaluronic acid, and nourishing hair 
+                    masks once or twice a week. These products maximize results with zero extra time spent during your day. Essential steps to maintain 
+                    your skin's health:`,
                     list: [
                         "Thorough makeup removal",
                         "Hydrating night cream",
@@ -167,10 +190,10 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
             ]
         },
         category: "tips",
-        image: "/blog/beauty-tips.jpg",
+        image: beauty_tips,
         date: "2024-03-05",
         author: {
-            name: "Emma Rodriguez",
+            name: "Orina Team",
             avatar: "/blog/authors/emma.jpg",
             role: "Beauty Editor"
         }
@@ -180,14 +203,19 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
         slug: "future-of-beauty-tech",
         title: "The Future of Beauty Technology: AI and Beyond",
         content: {
-            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
-            routines to skin-first philosophies, this year's trends are all about embracing individuality,
-             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
+            overview: `The beauty industry is undergoing a transformation like never before. Fueled by rapid advancements in artificial 
+            intelligence (AI), augmented reality (AR), and personalization technologies, beauty tech is no longer just about skincare 
+            apps or salon scheduling. It’s about intelligent ecosystems that understand, adapt, and evolve with each user — and we’re 
+            just getting started.`,
             sections: [
                 {
                     title: "AI-Powered Beauty",
                     icon: "🤖",
-                    content: "Artificial Intelligence is revolutionizing personal care:",
+                    content: `AI is revolutionizing product recommendations and skincare analysis. Tools powered by computer vision can now analyze 
+                    selfies to assess skin conditions, recommend routines, and even simulate aging effects. Brands like L’Oréal and Neutrogena are 
+                    already using AI to deliver hyper-personalized solutions. In the near future, expect AI to know your skin better than you do — 
+                    adapting your routine in real-time based on weather, stress levels, and health.
+                    Artificial Intelligence is revolutionizing personal care:`,
                     list: [
                         "Smart skin analysis devices",
                         "Personalized product recommendations",
@@ -198,7 +226,10 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
                 {
                     title: "Augmented Reality",
                     icon: "👓",
-                    content: "AR is changing how we experience beauty:",
+                    content: `No more guessing how that bold lipstick shade or balayage hair color will look. AR allows users to try on products virtually 
+                    in real-time, boosting confidence in online purchases and reducing product waste. As AR becomes more immersive, expect entire 
+                    virtual beauty consultations, AI stylists, and AR-powered tutorials tailored to your face shape and features.
+                    AR is changing how we experience beauty:`,
                     list: [
                         "Virtual makeup testing",
                         "Hair color simulation",
@@ -209,7 +240,10 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
                 {
                     title: "Smart Beauty Devices",
                     icon: "💡",
-                    content: "Connected devices are making beauty routines smarter:",
+                    content: `From skin-analyzing mirrors to connected cleansing brushes, beauty hardware is getting smarter. These devices gather data, 
+                    track progress, and integrate with mobile apps to offer insights and coaching. With the rise of IoT (Internet of Things), we’re 
+                    looking at a future where your mirror can book a salon appointment, reorder your favorite serum, or offer mood-based makeup tips.
+                    Connected devices are making beauty routines smarter:`,
                     list: [
                         "IoT-enabled skincare tools",
                         "Smart mirrors with analysis",
@@ -223,16 +257,16 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
                 author: "Dr. Lisa Chen, Beauty Tech Researcher"
             },
             takeaways: [
-                { title: "AI", description: "is making beauty more personalized" },
-                { title: "AR", description: "is revolutionizing product testing" },
-                { title: "IoT", description: "is creating smarter beauty routines" }
+                { title: "AI", description: "enhances personalization in beauty" },
+                { title: "AR", description: "transforms product testing experiences" },
+                { title: "IoT", description: "introduces intelligent beauty routines" }
             ]
         },
         category: "trends",
-        image: "/blog/beauty-tech.jpg",
+        image: beauty_tech,
         date: "2024-03-01",
         author: {
-            name: "Dr. Lisa Chen",
+            name: "Orina Team",
             avatar: "/blog/authors/lisa.jpg",
             role: "Beauty Tech Researcher"
         }
@@ -366,41 +400,45 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
         slug: "sustainable-beauty-brands",
         title: "Top Sustainable Beauty Brands Making a Difference",
         content: {
-            overview: `2025 is redefining beauty—think bolder, smarter, and more conscious. From AI-powered
-            routines to skin-first philosophies, this year's trends are all about embracing individuality,
-             technology, and sustainability. Here are the top beauty trends to watch and try in 2025:`,
+            overview: `In a world where consumers are increasingly conscious of their environmental impact, the beauty industry 
+            is evolving—one sustainable step at a time. From eco-friendly packaging to cruelty-free formulas, a new wave of beauty 
+            brands is proving that glam and green can go hand in hand. Here are some of the top sustainable beauty brands making a 
+            real difference:`,
             sections: [
                 {
-                    title: "Eco-Friendly Packaging",
-                    icon: "♻️",
-                    content: "Brands leading in sustainable packaging:",
+                    title: "Lush Cosmetics",
+                    icon: "🌿",
+                    content: `Lush has long been a pioneer in the eco-beauty movement. With its commitment to fresh, handmade products, 
+                    Lush minimizes packaging waste through their “naked” product line and uses recycled materials when packaging is necessary.
+Sustainability efforts:`,
                     list: [
-                        "Refillable product systems",
-                        "Biodegradable containers",
-                        "Recycled materials",
-                        "Zero-waste initiatives"
+                        "100% vegetarian products",
+                        "Zero animal testing",
+                        "In-store recycling program"
                     ]
                 },
                 {
-                    title: "Clean Ingredients",
-                    icon: "🌱",
-                    content: "Brands committed to clean formulations:",
+                    title: "Tata Harper",
+                    icon: "💧",
+                    content: `Tata Harper is synonymous with luxury and sustainability. All products are made on the brand’s own Vermont farm using natural ingredients and eco-friendly production methods.
+
+Sustainability efforts:`,
                     list: [
-                        "Organic certified products",
-                        "Vegan formulations",
-                        "Cruelty-free testing",
-                        "Natural preservatives"
+                        "Farm-to-face ingredients",
+                        "Glass packaging",
+                        "Carbon neutral shipping"
                     ]
                 },
                 {
-                    title: "Ethical Practices",
-                    icon: "🤝",
-                    content: "Brands with strong ethical standards:",
+                    title: "Herbivore Botanicals",
+                    icon: "🐰",
+                    content: `With minimalistic design and plant-based formulas, Herbivore Botanicals combines performance with planet-friendly values. Their products are free from synthetic ingredients and animal testing.
+
+Sustainability efforts:`,
                     list: [
-                        "Fair trade sourcing",
-                        "Carbon-neutral operations",
-                        "Community initiatives",
-                        "Transparent supply chains"
+                        "Recyclable glass containers",
+                        "Ethically sourced ingredients",
+                        "No synthetic preservatives",
                     ]
                 }
             ],
@@ -415,10 +453,10 @@ Try This: Brands with refillable packaging and biodegradable ingredients.`,
             ]
         },
         category: "trends",
-        image: "/blog/sustainable-brands.jpg",
+        image: beauty_brands,
         date: "2024-02-20",
         author: {
-            name: "Dr. Maya Patel",
+            name: "Orina Team",
             avatar: "/blog/authors/maya.jpg",
             role: "Sustainable Beauty Analyst"
         }
