@@ -4,6 +4,7 @@ export default {
         "about": "About",
         "pricing": "Pricing",
         "contact": "Contact",
+        "blog": "Blog",
         "signIn": "Sign In",
         "getStarted": "Get Started"
     },
@@ -142,5 +143,24 @@ export default {
         "rights": "All rights reserved.",
         "privacy": "Privacy Policy",
         "terms": "Terms of Use"
+    },
+    "blog": {
+        "title": "Beauty Industry Insights",
+        "subtitle": "Stay updated with the latest trends, tips, and news from the beauty industry.",
+        "readMore": "Read More",
+        "categories": {
+            "all": "All Posts",
+            "trends": "Beauty Trends",
+            "tips": "Beauty Tips",
+            "business": "Salon Business"
+        },
+        "featured": {
+            "title": "Featured Posts",
+            "subtitle": "Our most popular articles"
+        },
+        "latest": {
+            "title": "Latest Posts",
+            "subtitle": "Fresh content for beauty enthusiasts"
+        }
     }
 }

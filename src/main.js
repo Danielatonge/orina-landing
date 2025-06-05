@@ -3,8 +3,10 @@ import './assets/base.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createI18n } from 'vue-i18n'
+import router from './router'
 import en from './i18n/en.js'
 import ru from './i18n/ru.js'
+
 const app = createApp(App)
 
 // Create VueI18n instance with options
@@ -26,9 +28,9 @@ const i18n = createI18n({
     warnHtmlMessage: false // disable HTML message warning
 })
 
-
 // Ensure i18n is properly initialized
 app.use(i18n)
+app.use(router)
 
 // Mount the app only after i18n is initialized
 app.mount('#app')
