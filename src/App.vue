@@ -107,40 +107,58 @@ const currentYear = ref(new Date().getFullYear())
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-300 px-6 py-10">
       <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
           <!-- Logo and Description -->
           <div>
             <h1 class="text-4xl font-bold mb-4">
               <span class="text-red-500">O</span>rina<span class="text-red-500">.</span>
             </h1>
-            <p class="text-gray-400 max-w-md">
+            <p class="text-gray-400 max-w-md mb-4">
               {{ t('footer.description') }}
             </p>
 
           </div>
 
-          <!-- Contact Details -->
-          <div class="md:text-right space-y-4" id="contact">
+
+          <!-- Company Legal Information -->
+          <div class="space-y-4">
             <div>
-              <h3 class="text-white font-semibold mb-2">{{ t('footer.contact') }}</h3>
-              <a href="mailto:hello@orina.beauty" class="text-gray-400 hover:text-white transition-colors duration-200">
-                hello@orina.beauty
-              </a>
+              <h3 class="text-white font-semibold mb-3">{{ t('footer.company.name') }}</h3>
+              <p class="text-gray-400">{{ t('footer.company.address') }}</p>
             </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="space-y-4">
             <div>
-              <h3 class="text-white font-semibold mb-2">{{ t('footer.follow') }}</h3>
-              <div class="flex md:justify-end gap-4">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                  Twitter
+              <h3 class="text-white font-semibold mb-3">{{ t('footer.contact') }}</h3>
+              <div class="space-y-2">
+                <a href="mailto:hello@orina.beauty"
+                  class="block text-gray-400 hover:text-white transition-colors duration-200">
+                  hello@orina.beauty
                 </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                  LinkedIn
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                  Instagram
+                <a href="tel:+79175766653" class="block text-gray-400 hover:text-white transition-colors duration-200">
+                  +7 (917) 576 66 53
                 </a>
               </div>
             </div>
+            <!-- <div>
+              <h3 class="text-white font-semibold mb-3">{{ t('footer.follow') }}</h3>
+              <div class="flex flex-wrap gap-4">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                  {{ t('footer.social.twitter') }}
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                  {{ t('footer.social.linkedin') }}
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                  {{ t('footer.social.instagram') }}
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                  {{ t('footer.social.telegram') }}
+                </a>
+              </div>
+            </div> -->
           </div>
         </div>
 

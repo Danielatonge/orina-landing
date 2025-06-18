@@ -134,7 +134,17 @@ export default {
         "follow": "Follow us",
         "rights": "All rights reserved.",
         "privacy": "Privacy Policy",
-        "terms": "Terms of Use"
+        "terms": "Terms of Use",
+        "company": {
+            "name": "LLC 'ORINA TECHNOLOGIES'",
+            "address": "Universitetskaya Str., Building 5, Office 115, workplace 40/4, Innopolis, Russia",
+        },
+        "social": {
+            "twitter": "Twitter",
+            "linkedin": "LinkedIn",
+            "instagram": "Instagram",
+            "telegram": "Telegram"
+        }
     },
     "blog": {
         "title": "Beauty Industry Insights",
